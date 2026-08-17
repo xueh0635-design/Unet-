@@ -1,0 +1,6 @@
+# Original archive contains a ~1 GB dataset that exceeds GitHub's 100 MB file limit.
+data/dataset_GNI.mat
+
+# Python bytecode/cache
+__pycache__/
+*.py[cod]
