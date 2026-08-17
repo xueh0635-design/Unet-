@@ -11,6 +11,12 @@
 - `saved_models_2d/`：模型权重与训练曲线
 - `test_results_2d/`：测试结果
 
-## 未上传文件
+## 大数据集下载与还原
 
-`data/dataset_GNI.mat` 原文件约 1 GB，超过 GitHub 普通仓库单文件 100 MB 限制，因此未提交。原始完整压缩包仍保存在本地：`unet_2d.zip`。
+原始 `data/dataset_GNI.mat` 约 1 GB，已切分为 `data/dataset_GNI_parts/` 中的 12 个分片，每个分片约 90 MiB，均低于 GitHub 单文件限制。下载仓库后，在项目根目录运行：
+
+```bash
+python3 data/reassemble_dataset_GNI.py
+```
+
+脚本会按编号顺序合并分片，并使用 `dataset_GNI.mat.sha256` 校验还原结果。还原后的文件会生成在 `data/dataset_GNI.mat`。
